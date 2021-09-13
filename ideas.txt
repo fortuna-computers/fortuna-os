@@ -1,0 +1,37 @@
+Ideas:
+
+- Allow loading of applications in any memory position
+  - Use PIC mode from z88dk-asm
+  - Need to update emulator to use z88dk-asm
+- Kernel is loaded automatically by the hardware.
+  - Need to implement in Fortuna-2.
+- Need to implement FAT in Fortuna-2 controller.
+
+- Memory map
+  - 0000: JP to main + system calls
+  - 0200: Operating system
+  - xxxx: Application area
+  - Question? How we manage multiple memory banks?
+  
+- Features:
+  - Compatible with all Fortuna version
+  - Multiprocess
+    - Requires timer?
+      - Need to implement timer in Fortuna-2
+      
+- System calls to:
+  - Terminal/UART
+  - SDCard management
+    - All FAT functions
+    - Query disk information
+  - Memory management
+    - Choose memory bank
+    - Blit
+  - Setup timers
+  - Read/write to Real Time Clock
+  - Control 2-row display
+  - Control audio (?)
+- Interrupts
+  - Terminal
+  - FAT operation completed
+  - Timer
